@@ -15,8 +15,11 @@ providers:
 
 ---
 
-kind: Deploy
-type: helm
+kind: Run
+type: helm-pod
 name: hello-world
 source:
   path: ./
+spec:
+  resource:
+    kind: Job
