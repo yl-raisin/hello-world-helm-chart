@@ -1,0 +1,22 @@
+apiVersion: garden.io/v1
+kind: Project
+name: hello-world
+
+environments:
+  - name: dev
+
+providers:
+  - name: kubernetes
+    context: ${local.env.CONTEXT_NAME}
+    namespace: ${local.env.NAMESPACE}
+    deploymentRegistry:
+      hostname: dockerhub.io
+      namespace: xxx
+
+---
+
+kind: Deploy
+type: helm
+name: hello-world
+source:
+  path: ./

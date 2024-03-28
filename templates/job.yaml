@@ -1,0 +1,15 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  labels:
+    job-name: hello-world
+  name: hello-world
+spec:
+  template:
+    spec:
+      containers:
+      - image: hello-world
+        imagePullPolicy: Always
+        name: hello-world
+        resources: {}
+      restartPolicy: Never
